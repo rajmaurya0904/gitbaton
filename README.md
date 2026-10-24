@@ -24,7 +24,11 @@ pip install -e ".[dev]"
 
 ## Limitations
 
-<!-- Honest and short: what it does NOT do, known gaps. -->
+- **No locking or handoff logic yet.** GitBaton currently only locates the root of a git repository (`gitbaton.git_utils.find_git_root`). The baton-passing, file-locking, and task-orchestration features described above are not implemented, and there is no CLI entry point to run.
+- **Git only.** It assumes the working directory is inside a git repository and shells out to the `git` executable; it does not understand other version-control systems, and it fails with `FileNotFoundError` if `git` is not on `PATH`.
+- **No network, no remotes.** Nothing here pushes, pulls, or talks to a remote; all operations are local to the checked-out repository.
+- **Untested on Windows.** The test suite runs on POSIX systems; the `git rev-parse` invocation is not verified on Windows shells.
+- **Single repository.** It operates on one repository at a time; there is no support for monorepos spanning multiple git roots or for submodules.
 
 ## Development
 
