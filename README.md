@@ -2,7 +2,7 @@
 
 **A tool designed for multi-agent coding sessions that cleanly orchestrates task handoffs, preventing concurrent merge conflicts on shared files.**
 
-<!-- THE PROBLEM: 2-3 concrete lines on the annoying thing this removes. -->
+When multiple autonomous coding agents or developers edit the same repository simultaneously, they frequently step on each other's toes modifying shared configuration, entrypoints, or utility files. GitBaton replaces chaotic parallel edits with sequential batons and file locks, removing the endless cycle of rebase conflicts and broken builds.
 
 ## Example
 
